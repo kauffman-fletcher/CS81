@@ -1,0 +1,17 @@
+<script>
+//This is the value we we're getting from a remote source
+var value = "hang\n";
+
+setInterval(function(){
+    switch(value) {
+      case 'hang':
+        document.body.innerHTML = "Hang in there!";
+        break;
+      case 'up':
+        document.body.innerHTML = "Up";
+        break;
+      default:
+        document.body.innerHTML = "No good!";
+    }
+},1000);
+</script>
