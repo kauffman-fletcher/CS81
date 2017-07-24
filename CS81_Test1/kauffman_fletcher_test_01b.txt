@@ -1,0 +1,165 @@
+Problem 1: (10 points)
+Explain the statement <script type="text/javascript" src=”js/filename.js”></script>
+
+	This is including an external file, in the local js directory, called filename.js, that contains JavaScript	code to be executed here.
+
+
+Problem 2: (10 points)
+What is the value of a[5] in the array declared below:
+
+var a = [2, 4, 6, 'Joe', 10, [1, 2], {lastName: 'Smith'}];
+
+	It is, itself, an array, containing the values 1 and 2.
+
+
+Problem 3: (10 points)
+ var myQuote="He who laughs, lasts.";
+
+Give the value of each of the following expressions:
+a. myQuote.toUpperCase()
+
+	HE WHO LAUGHS, LASTS.
+
+b. myQuote.indexOf("a")
+
+	8
+	
+c. myQuote.indexOf("@", 1)
+
+	-1
+
+d. myQuote.indexOf("who")
+
+	3
+
+e. myQuote.indexOf("a", 10)
+
+	16
+
+f. myQuote.lastIndexOf("a")
+
+	16
+
+g. myQuote.lastIndexOf("a", 7)
+
+	-1
+
+h. myQuote.lastIndexOf("a", 10)
+
+	8
+
+i. myQuote.charAt(7)
+
+	l
+
+j. myQuote.charAt(myQuote.length)
+
+	no value (looking for a character past the end)
+
+k. myQuote.charAt(myQuote.length - 3)
+
+	t
+
+Problem 4: (30 points)
+ Write a JavaScript function that accepts a string as a parameter and counts the number of vowels (aeiouAEIOU) within the string.
+
+Note : As the letter 'y' can be regarded as both a vowel and a consonant, we do not count 'y' as vowel here.
+Sample Data and output: 
+Example string: 'The quick brown fox' 
+Expected Output: 5
+
+Hint: vowel_list.indexOf(str1[x]) !== -1
+
+	function countVowels(inputString){
+		var vowelSet = "aeiouAEIOU";
+		var vowelCount = 0;
+		for(var i = 0; i<inputString.length;i++){
+			if(vowelSet.indexOf(inputString.charAt(i))>-1){
+				vowelCount++;
+			}
+		}
+		return vowelCount;
+	}
+
+
+Problem 5: (30 points)
+ Explain Automatic Type Conversion in JavaScript.
+
+	Since variables are loosely-typed in JS, their type may be coerced into other relevant types for
+	the purposes of expressions, where the desired destination type is implied by the expression itself.
+	For example, if an integer variable called A has the value 3, then in the expression (2 + A), A's
+	value is interpreted as an integer to make this a mathematical expression, with a value of 5. In
+	the expression ("2" + A), since 2 is a string (the literal character 2, not the integer value),
+	A is turned into a string representing its integer value and then appended to the character 2, with
+	a value of "23").
+
+Problem 6: (30 points)
+Provide the output to console
+
+var x = "good morning!";
+
+var f1 = function() {
+x = "good afternoon";
+};
+f1();
+console.log(x);
+// What is outputted to console?
+
+	good morning!
+	
+	(variables are function-local in scope, so the change to x inside the function doesn't affect the
+	same-named counterpart outside the function)
+
+var f2 = function() {
+var x = "good evening";
+};
+f2();
+console.log(x);
+// What is outputted to console?
+
+	good morning!
+	(same as above)
+
+Problem 7: (40 points)
+ 
+
+Put the below data in a JSON formatted array where each individual is its own object. Then write code that will print each person's first letter of their first name and last name (example: msmith)
+
+ 
+
+firstName: Mike lastName: Smith
+
+firstName: Anna lastName: House
+
+firstName: Mark lastName: McDonald
+
+	var jsonArray = [
+	{"firstName":"Mike", "lastName":"Smith"},
+	{"firstName":"Anna", "lastName":"House"},
+	{"firstName":"Mark", "lastName":"McDonald"},
+	];
+
+	for(var i =0;i<jsonArray.length;i++){
+		console.log(jsonArray[i].firstName.charAt(0)+jsonArray[i].lastName);
+	}
+
+
+Problem 8: (40 points)
+ Explain each line of this code:
+
+var str = '{"foo": "bar"}';
+
+	set a variable called str that contains the beginning of a JSON array.
+
+console.log(str.foo);
+	
+	doesn't do anything, because str is just a string and doesn't have any meaning otherwise
+
+var obj = JSON.parse(str);
+
+	creates the variable obj and turns it into a JSON object, which now does contain the
+	key/value pair of foo:bar
+
+console.log(obj.foo);
+
+	displays "bar"
