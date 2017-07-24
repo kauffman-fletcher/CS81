@@ -1,0 +1,6 @@
+Node.js is an open-source runtime, written in JavaScript, for creating server-side and
+networked applications. Node.js is designed to be highly scalable and to be completely asynchronous and event-driven.
+
+Node.js is used by a lot of significant entities in the online space, including companies like Microsoft, Yahoo!, and eBay. 
+
+Node.js can spin-up its own webserver instances and handle more activity in parallel than an Apache webserver.
