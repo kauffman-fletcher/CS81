@@ -1,1 +1,39 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fletcher Kauffman Unit 09</title>
+    <style type="text/css"> /*Much simpler CSS solution*/
+        /*strong:hover   {color:red;}*/
+    </style>
+
+</head>
+<body>
+    <div id="bodytext">
+        <strong>We</strong> have just started <strong>this</strong> section for the users
+        (<strong>beginner</strong> to intermediate) who want to work with <strong>various</strong>
+        JavaScript <strong>problems</strong> and write scripts online to <strong>test</strong>
+        their JavaScript <strong>skill</strong>.
+    </div>
+</body>
+<script>
+    document.getElementById("bodytext").addEventListener("mouseover",mouseOver);
+    document.getElementById("bodytext").onmouseout = function() {mouseOut()}; //*I don't even understand why this appears to work
+
+    function mouseOver() {
+        var strongs = document.querySelectorAll("strong");
+        for(var i =0; i<strongs.length; i++)
+        {
+            strongs[i].style.color = "red";
+        }
+    }
+
+    function mouseOut() {
+        var strongs = document.querySelectorAll("strong");
+        for(var i =0; i<strongs.length; i++)
+        {
+            strongs[i].style.color = "black";
+        }
+    }
+</script>
+</html>
